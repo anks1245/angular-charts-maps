@@ -1,0 +1,85 @@
+<div>
+    <div class="w-full grid">
+        <div class="col-12">
+            <div class="text-center p-3 border-round-sm bg-primary font-bold">Chart 1</div>
+            <div *ngIf="chart1Options && !isChart1Loading else chart1Loader">
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+                    [options]="chart1Options!" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                    [runOutsideAngular]="runOutsideAngular" [callbackFunction]="chartCallback"
+                    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+            </div>
+            <ng-template #chart1Loader>
+                <p-progressSpinner styleClass="flex flex-column justify-content-center align-items-center" ariaLabel="loading" />
+            </ng-template>
+        </div>
+        <div class="lg:col-6 md:col-12 sm:col-12">
+            <div class="flex justify-content-between">
+                <div class="text-center p-3 border-round-sm bg-primary font-bold ">Chart 2</div>
+                <!-- <p-button icon="pi pi-sign-out" [rounded]="true" [text]="true" severity="danger" size="small" /> -->
+            </div>
+            <div *ngIf="chart2Options && !isChart2Loading else chart2Loader">
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+                    [options]="chart2Options!" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                    [runOutsideAngular]="runOutsideAngular" [callbackFunction]="chartCallback"
+                    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+            </div>
+            <ng-template #chart2Loader>
+                <p-progressSpinner styleClass="flex flex-column justify-content-center align-items-center" ariaLabel="loading" />
+            </ng-template>
+        </div>
+        <div class="lg:col-6 md:col-12  sm:col-12">
+            <div class="flex justify-content-between">
+                <div class="text-center p-3 border-round-sm bg-primary font-bold ">Chart 3</div>
+                <!-- <p-button icon="pi pi-sign-out" [rounded]="true" [text]="true" severity="danger" size="small" /> -->
+            </div>
+            <div *ngIf="chart3Options && !isChart3Loading else chart3Loader">
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+                    [options]="chart3Options!" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                    [runOutsideAngular]="runOutsideAngular" [callbackFunction]="chartCallback"
+                    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+            </div>
+            <ng-template #chart3Loader>
+                <p-progressSpinner styleClass="flex flex-column justify-content-center align-items-center" ariaLabel="loading" />
+            </ng-template>
+        </div>
+        <div class="lg:col-6 md:col-12 sm:col-12">
+            <div class="flex justify-content-between">
+                <div class="text-center p-3 border-round-sm bg-primary font-bold ">Chart 4</div>
+                <p-button icon="pi pi-sign-out" *ngIf="isShowingChart4Granular" (onClick)="exitChart4ByMonth()" [rounded]="true" [text]="true" severity="danger" size="small" />
+            </div>
+            <div *ngIf="chart4Options && !isChart4Loading else chart4Loader">
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+                    [options]="chart4Options!" [(update)]="updateChart4Flag" [oneToOne]="oneToOneFlag"
+                    [runOutsideAngular]="runOutsideAngular" [callbackFunction]="chartCallback"
+                    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+            </div>
+            <!-- <div *ngIf="true && chart4extOptions">
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+                    [options]="chart4extOptions!" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                    [runOutsideAngular]="runOutsideAngular" [callbackFunction]="chartCallback"
+                    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+            </div> -->
+            <ng-template #chart4Loader>
+                <p-progressSpinner styleClass="flex flex-column justify-content-center align-items-center" ariaLabel="loading" />
+            </ng-template>
+            <!-- <ng-template #chart4ExtLoader>
+                <p-progressSpinner styleClass="flex flex-column justify-content-center align-items-center" ariaLabel="loading" />
+            </ng-template> -->
+        </div>
+        <div class="lg:col-6 md:col-12 sm:col-12 flex flex-column justify-content-center">
+            <div class="flex justify-content-between">
+                <div class="text-center p-3 border-round-sm bg-primary font-bold ">Chart 5</div>
+                <p-button icon="pi pi-sign-out" *ngIf="isShowingChart5Grarnular" [rounded]="true" [text]="true" severity="danger" size="small" (onClick)="exitTransportModeChart()"/>
+            </div>
+            <div *ngIf="chart5Options && !isChart5Loading else chart5Loader">
+                <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+                    [options]="chart5Options!" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+                    [runOutsideAngular]="runOutsideAngular" [callbackFunction]="chartCallback"
+                    style="width: 100%; height: 400px; display: block;"></highcharts-chart>
+            </div>
+            <ng-template #chart5Loader>
+                <p-progressSpinner styleClass="flex flex-column justify-content-center align-items-center" ariaLabel="loading" />
+            </ng-template>
+        </div>
+    </div>
+</div>
